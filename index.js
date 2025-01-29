@@ -17,13 +17,13 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Route to handle form submission
 app.post("/send-email", async (req, res) => {
-  const { name, role, email, phoneNumber, organization, message } = req.body;
+  const { name, role, email, phone, organization, message } = req.body;
 
   const msg = {
     to: "rashikkoirala@lftechnology.com", // Your company's email
     from: "rashikkoirala@lftechnology.com", // This can be any valid email
     subject: "New Form Submission",
-    text: `Name: ${name}\n Role: ${role}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nOrganization: ${organization}\nMessage: ${message}`,
+    text: `Name: ${name}\n Role: ${role}\nEmail: ${email}\nPhone Number: ${phone}\nOrganization: ${organization}\nMessage: ${message}`,
   };
 
   try {
