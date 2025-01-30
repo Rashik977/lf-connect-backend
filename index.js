@@ -37,5 +37,9 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
+app.get("/ping", (req, res) => {
+  res.status(200).send("OK");
+});
+
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
